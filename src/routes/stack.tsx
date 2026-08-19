@@ -8,6 +8,7 @@ import {
   SectionHeader,
 } from "@/components/site/Primitives";
 import { RedlineNote } from "@/components/site/RedlineNote";
+import { DossierDownload } from "@/components/site/DossierDownload";
 
 export const Route = createFileRoute("/stack")({
   head: () => ({
@@ -198,6 +199,13 @@ function StackPage() {
               </div>
             ))}
           </dl>
+        </Panel>
+      </section>
+
+      <section>
+        <SectionHeader index="D / Export" title="Dossier Export" />
+        <Panel className="mt-10">
+          <DossierDownload label="Download stack-dossier (PDF)" />
         </Panel>
       </section>
     </PageShell>
