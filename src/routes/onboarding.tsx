@@ -128,6 +128,15 @@ function OnboardingPage() {
               <Field label="Gewenste Domeinnaam">
                 <input required name="domain" className="atelier-input" placeholder="bedrijf.be" />
               </Field>
+              <Field label="Contact E-mailadres">
+                <input
+                  required
+                  type="email"
+                  name="email"
+                  className="atelier-input"
+                  placeholder="jij@bedrijf.be"
+                />
+              </Field>
               <Field label="Stack Keuze">
                 <select required name="stack" defaultValue="webhosting" className="atelier-input">
                   <option value="webhosting">Managed Webhosting &amp; Mail</option>
