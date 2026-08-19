@@ -163,14 +163,16 @@ function SecurityPage() {
             ))}
           </dl>
           <div className="mt-8 border-t border-gridline pt-8">
-            <div className="flex items-center gap-2.5">
-              <span className="pulse-dot" />
-              <span className="font-mono text-[10px] tracking-[0.18em] text-moss uppercase">
-                System status: all systems operational — Geneva
-              </span>
-            </div>
+            <StatusChannel />
             <QualityStamps className="mt-8" />
           </div>
+        </Panel>
+      </section>
+
+      <section>
+        <SectionHeader index="D / Export" title="Dossier Export" />
+        <Panel className="mt-10">
+          <DossierDownload label="Download security-dossier (PDF)" />
         </Panel>
       </section>
     </PageShell>
