@@ -31,11 +31,12 @@
 }
 
 :root {
-  /* Travertine #F7F5F0 */
-  --canvas: oklch(0.968 0.006 85);
-  --grid-soft: oklch(0.95 0.006 85);
-  /* Gridline #E2DFD8 */
-  --gridline: oklch(0.897 0.008 85);
+  /* Calcified limestone #EBE6DF */
+  --canvas: oklch(0.928 0.008 80);
+  --grid-soft: oklch(0.912 0.008 80);
+  /* Gridline — architectural, deeper */
+  --gridline: oklch(0.845 0.011 80);
+  --gridline-strong: oklch(0.72 0.012 80);
   /* Slate black #1A1A18 */
   --ebony: oklch(0.216 0.002 95);
   /* Alpine moss #2A4736 */
@@ -43,14 +44,18 @@
   --moss-hover: oklch(0.29 0.04 156);
   /* Terracotta #C26D52 */
   --terracotta: oklch(0.617 0.101 39);
-  --muted-ink: oklch(0.548 0.005 90);
+  /* Swiss red #D8232A */
+  --swiss-red: oklch(0.539 0.213 27.5);
+  --muted-ink: oklch(0.508 0.005 90);
   --background: var(--canvas);
   --foreground: var(--ebony);
-  /* Paper layer #FAF8F5 */
-  --card: oklch(0.981 0.005 85);
+  /* Heavy rag paper #FFFFFF */
+  --card: oklch(1 0 0);
+  --paper-shadow: 0 25px 50px -12px rgba(27, 31, 28, 0.08);
   /* Millimeter paper: gridline at ~4% strength over the canvas */
-  --grid-ink: color-mix(in oklab, var(--gridline) 22%, var(--canvas));
+  --grid-ink: color-mix(in oklab, var(--gridline) 30%, var(--canvas));
 }
+
 
 @layer base {
   * {
