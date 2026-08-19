@@ -35,14 +35,36 @@ const steps = [
 ];
 
 function OnboardingPage() {
-  const [state, setState] = useState<"idle" | "checking" | "done">("idle");
+  const [state, setState] = useState<"idle" | "checking" | "done" | "error">("idle");
   const [ticket, setTicket] = useState("");
+  const [queue, setQueue] = useState(1);
+  const submitRequest = useServerFn(submitInfraRequest);
 
-  const submit = (e: React.FormEvent<HTMLFormElement>) => {
+  const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = new FormData(e.currentTarget);
     setState("checking");
-    setTicket(`DPC-${Math.floor(100000 + Math.random() * 899999)}`);
-    setTimeout(() => setState("done"), 1600);
+    try {
+      const result = await submitRequest({
+        data: {
+          org: String(form.get("org") ?? ""),
+          domain: String(form.get("domain") ?? ""),
+          stack: String(form.get("stack") ?? "webhosting") as
+            | "webhosting"
+            | "vps"
+            | "ksuite"
+            | "custom",
+          account: String(form.get("account") ?? "existing") as "existing" | "new",
+          email: String(form.get("email") ?? ""),
+          notes: String(form.get("notes") ?? ""),
+        },
+      });
+      setTicket(result.ticket);
+      setQueue(result.queue);
+      setState("done");
+    } catch {
+      setState("error");
+    }
   };
 
   return (
