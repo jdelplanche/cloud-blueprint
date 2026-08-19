@@ -27,16 +27,6 @@ export function BrandMark({ className }: { className?: string }) {
   );
 }
 
-function StatusPill() {
-  return (
-    <span className="flex items-center gap-2 border border-gridline bg-card px-3 py-1.5">
-      <span className="pulse-dot" />
-      <span className="font-mono text-[9px] tracking-[0.18em] text-moss uppercase">
-        Swiss DC Active (Geneva) — All Systems Operational
-      </span>
-    </span>
-  );
-}
 
 export function TopNav() {
   const [open, setOpen] = useState(false);
