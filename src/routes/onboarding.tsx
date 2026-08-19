@@ -102,8 +102,9 @@ function OnboardingPage() {
               <dl className="mt-10 divide-y divide-gridline border-y border-gridline">
                 {[
                   ["Ticket ID", ticket],
-                  ["Queue position", "02 / 07"],
-                  ["Validatie", "Automatische pre-check voltooid"],
+                  ["Queue position", `${String(queue).padStart(2, "0")} in wachtrij`],
+                  ["Validatie", "Aanvraag geregistreerd in het dossier"],
+                  ["Bestemming", "cloud@delplanche.cloud"],
                   ["Verwachte setup", "< 24 uur na toegangsverlening"],
                 ].map(([k, v]) => (
                   <div key={k} className="flex flex-wrap justify-between gap-4 py-4">
