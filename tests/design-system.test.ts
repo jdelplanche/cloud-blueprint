@@ -70,7 +70,7 @@ describe("components", () => {
 
   it("footer keeps the colophon frame, copy vector and signature", () => {
     expect(footer).toContain("vault-frame");
-    expect(footer).toContain("cloud@delplanche.cloud");
+    expect(footer).toContain("core@delplanche.cloud");
     expect(footer).toContain("J.Z.D.");
     expect(footer).toContain("sm:grid-cols-3");
   });

@@ -104,7 +104,7 @@ function OnboardingPage() {
                   ["Ticket ID", ticket],
                   ["Queue position", `${String(queue).padStart(2, "0")} in wachtrij`],
                   ["Validatie", "Aanvraag geregistreerd in het dossier"],
-                  ["Bestemming", "cloud@delplanche.cloud"],
+                  ["Bestemming", "core@delplanche.cloud"],
                   ["Verwachte setup", "< 24 uur na toegangsverlening"],
                 ].map(([k, v]) => (
                   <div key={k} className="flex flex-wrap justify-between gap-4 py-4">
@@ -190,7 +190,7 @@ function OnboardingPage() {
                   )}
                 </ActionButton>
                 <span className="label-mono">
-                  Zero-tracking formulier — verzonden naar cloud@delplanche.cloud
+                  Zero-tracking formulier — verzonden naar core@delplanche.cloud
                 </span>
                 {state === "error" && (
                   <span
