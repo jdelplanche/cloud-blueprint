@@ -14,6 +14,9 @@
   --color-moss: var(--moss);
   --color-moss-hover: var(--moss-hover);
   --color-terracotta: var(--terracotta);
+  --color-swiss-red: var(--swiss-red);
+  --color-gridline-strong: var(--gridline-strong);
+
   --color-muted-ink: var(--muted-ink);
   --color-card: var(--card);
   --color-card-foreground: var(--foreground);
