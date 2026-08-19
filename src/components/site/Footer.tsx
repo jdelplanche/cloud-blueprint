@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { BrandMark } from "@/components/site/TopNav";
+import { BrandMark, HandArrow } from "@/components/site/TopNav";
 import { RedlineNote } from "@/components/site/RedlineNote";
 import { CopyAction } from "@/components/site/CopyAction";
 import { ArrowGlyph } from "@/components/site/Primitives";
