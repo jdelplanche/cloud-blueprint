@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, Panel, SectionHeader } from "@/components/site/Primitives";
 import { QualityStamps } from "@/components/site/Stamps";
+import { StatusChannel } from "@/components/site/SystemStatus";
+import { DossierDownload } from "@/components/site/DossierDownload";
 
 export const Route = createFileRoute("/security")({
   head: () => ({
