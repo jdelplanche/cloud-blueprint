@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { BrandMark } from "@/components/site/TopNav";
 import { RedlineNote } from "@/components/site/RedlineNote";
+import { CopyAction } from "@/components/site/CopyAction";
+import { ArrowGlyph } from "@/components/site/Primitives";
 
 const columns: {
   title: string;
@@ -28,45 +30,56 @@ const columns: {
     items: [
       { label: "System Status (Live)", to: "/security" },
       { label: "PGP Verification Key", to: "/contact" },
-      { label: "cloud@delplanche.cloud", href: "mailto:cloud@delplanche.cloud" },
+      { label: "Onboarding Vector", to: "/onboarding" },
     ],
   },
 ];
 
 const linkClass =
-  "font-mono text-[10px] tracking-[0.16em] text-ebony uppercase transition-colors hover:text-moss";
+  "group flex items-center justify-between gap-3 font-mono text-[10px] tracking-[0.16em] text-ebony uppercase transition-colors hover:text-moss";
 
 export function Footer() {
   return (
-    <footer className="border-t border-gridline bg-card/50">
-      <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
-        <div className="grid gap-12 md:grid-cols-[1.3fr_2fr]">
-          <div>
+    <footer className="px-4 pb-10 md:px-8 md:pb-16">
+      <div className="mx-auto max-w-6xl vault-frame p-6 md:p-12">
+        <div className="grid gap-10 md:grid-cols-[1.15fr_2fr] md:gap-14">
+          {/* Colofon — identiteit & handtekening van de architect */}
+          <div className="border-b border-gridline-strong pb-8 md:border-r md:border-b-0 md:pr-10 md:pb-0">
             <BrandMark className="font-mono text-[12px] font-medium tracking-[0.16em] text-ebony" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-ink">
               Sovereign Cloud Architecture &amp; Turn-Key Infrastructure. Part of the Delplanche
               Ecosystem.
             </p>
-            <span className="mt-6 inline-flex border border-gridline bg-canvas px-3 py-1.5 font-mono text-[9px] tracking-[0.2em] text-moss uppercase">
-              [ Brussels / Geneva / Zürich ]
-            </span>
-            <RedlineNote className="mt-10" rotate={-1.5}>
+
+            <div className="mt-6 flex flex-wrap gap-2">
+              <span className="inline-flex border border-gridline-strong bg-card px-3 py-1.5 font-mono text-[9px] tracking-[0.2em] text-moss uppercase">
+                [ Brussels / Geneva / Zürich ]
+              </span>
+              <span className="inline-flex items-center gap-2 border border-gridline-strong bg-card px-3 py-1.5 font-mono text-[9px] tracking-[0.2em] text-ebony uppercase">
+                <span className="inline-block h-2 w-2 bg-swiss-red" aria-hidden="true" />
+                46.2044° N, 6.1432° E
+              </span>
+            </div>
+
+            <RedlineNote className="mt-7" rotate={-1.5}>
               // Elke stack persoonlijk nagekeken voor oplevering. — J.Z.D.
             </RedlineNote>
           </div>
 
-          <div className="grid gap-10 sm:grid-cols-3">
+          <div className="grid gap-px bg-gridline-strong sm:grid-cols-3">
             {columns.map((col) => (
-              <div key={col.title} className="flex flex-col gap-4">
+              <div key={col.title} className="flex flex-col gap-4 bg-card p-5">
                 <span className="label-mono">{col.title}</span>
                 {col.items.map((item) =>
                   item.href ? (
                     <a key={item.label} href={item.href} className={linkClass}>
                       {item.label}
+                      <ArrowGlyph className="text-terracotta opacity-60" />
                     </a>
                   ) : (
                     <Link key={item.label} to={item.to!} className={linkClass}>
                       {item.label}
+                      <ArrowGlyph className="text-terracotta opacity-60" />
                     </Link>
                   ),
                 )}
@@ -75,11 +88,31 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col gap-3 border-t border-gridline pt-8 md:flex-row md:justify-between">
-          <span className="label-mono">
-            © 2026 Delplanche — Hosted exclusively on 100% Hydroelectric Swiss Infrastructure.
+        {/* Contactvector — interactieve actie i.p.v. platte mailto-tekst */}
+        <div className="mt-10 flex flex-col gap-4 border-t border-gridline-strong pt-8 sm:flex-row sm:items-center">
+          <CopyAction value="cloud@delplanche.cloud" label="cloud@delplanche.cloud" />
+          <Link
+            to="/contact"
+            className="stamp-press group inline-flex items-center justify-center gap-2.5 border-2 border-moss bg-card px-4 py-2.5 font-mono text-[10px] tracking-[0.16em] text-moss uppercase hover:bg-moss/[0.06]"
+          >
+            Naar secure contact vector <ArrowGlyph />
+          </Link>
+        </div>
+
+        {/* Technische certificering & minimalistisch impressum */}
+        <div className="mt-8 flex flex-col gap-2 border-t border-gridline-strong pt-6">
+          <span className="font-mono text-[9px] leading-relaxed tracking-[0.16em] text-ebony uppercase">
+            // © 2026 Delplanche.cloud
           </span>
-          <span className="label-mono">Infrastructure: Infomaniak / Genève — CH</span>
+          <span className="font-mono text-[9px] leading-relaxed tracking-[0.16em] text-muted-ink uppercase">
+            // Hosted exclusively on 100% hydroelectric swiss infrastructure (Infomaniak SA, Geneva)
+          </span>
+          <span className="font-mono text-[9px] leading-relaxed tracking-[0.16em] text-muted-ink uppercase">
+            // Impressum: Delplanche — J.Z.D., Brussel (BE) —{" "}
+            <Link to="/legal" className="text-moss underline-offset-2 hover:underline">
+              volledige akte
+            </Link>
+          </span>
         </div>
       </div>
     </footer>
