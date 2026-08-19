@@ -71,7 +71,7 @@ function ContactPage() {
         <SectionHeader
           index="A / Transmission"
           title="Beveiligd Contactformulier"
-          lead="Elk bericht wordt vastgelegd in de Delplanche-inbox en beantwoord vanaf cloud@delplanche.cloud."
+          lead="Elk bericht wordt vastgelegd in de Delplanche-inbox en beantwoord vanaf core@delplanche.cloud."
         />
         <Panel className="mt-10">
           {state === "sent" ? (
@@ -83,7 +83,7 @@ function ContactPage() {
                 </p>
               </div>
               <p className="mt-6 text-sm leading-relaxed text-muted-ink">
-                Je bericht staat in de wachtrij van cloud@delplanche.cloud. Antwoord volgt normaal
+                Je bericht staat in de wachtrij van core@delplanche.cloud. Antwoord volgt normaal
                 binnen één werkdag.
               </p>
               <ActionButton className="mt-10" onClick={() => setState("idle")}>
@@ -134,7 +134,7 @@ function ContactPage() {
                     </>
                   ) : (
                     <>
-                      Verzend naar cloud@delplanche.cloud <ArrowGlyph />
+                      Verzend naar core@delplanche.cloud <ArrowGlyph />
                     </>
                   )}
                 </ActionButton>
@@ -158,10 +158,10 @@ function ContactPage() {
           <Mail size={16} strokeWidth={1.2} className="text-moss" />
           <span className="mt-6 block label-mono">Direct Mail</span>
           <a
-            href="mailto:cloud@delplanche.cloud"
+            href="mailto:core@delplanche.cloud"
             className="mt-3 block font-mono text-[14px] text-ebony transition-colors hover:text-moss"
           >
-            cloud@delplanche.cloud
+            core@delplanche.cloud
           </a>
           <p className="mt-5 text-sm leading-relaxed text-muted-ink">
             Gehost op Infomaniak kMail — Zwitserse jurisdictie, geen scanning.

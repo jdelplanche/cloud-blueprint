@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const INBOX_ADDRESS = "cloud@delplanche.cloud";
+export const INBOX_ADDRESS = "core@delplanche.cloud";
 
 export const infraRequestSchema = z.object({
   org: z.string().min(2).max(200),

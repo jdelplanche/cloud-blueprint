@@ -20,7 +20,7 @@ export const Route = createFileRoute("/legal")({
 const rows = [
   ["Beheerder", "Delplanche / Jona Zeno Delplanche"],
   ["Locatie", "Brussel, België / Europa"],
-  ["Contact", "cloud@delplanche.cloud"],
+  ["Contact", "core@delplanche.cloud"],
   ["Infrastructuurpartner", "Infomaniak Network SA — Genève, Zwitserland"],
 ];
 

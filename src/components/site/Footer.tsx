@@ -90,7 +90,7 @@ export function Footer() {
 
         {/* Contactvector — interactieve actie i.p.v. platte mailto-tekst */}
         <div className="mt-12 flex flex-col gap-4 border-t border-gridline-strong pt-9 sm:flex-row sm:items-center">
-          <CopyAction value="cloud@delplanche.cloud" label="cloud@delplanche.cloud" />
+          <CopyAction value="core@delplanche.cloud" label="core@delplanche.cloud" />
           <Link
             to="/contact"
             className="stamp-press group inline-flex items-center justify-center gap-2.5 rounded-[4px] border-2 border-moss bg-card px-4 py-2.5 font-mono text-[10px] tracking-[0.16em] text-moss uppercase transition-colors hover:bg-moss/[0.07]"
