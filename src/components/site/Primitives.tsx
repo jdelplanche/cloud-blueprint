@@ -40,7 +40,8 @@ export function SectionHeader({
 }
 
 const baseBtn =
-  "group inline-flex items-center justify-center gap-2.5 border border-moss bg-transparent px-6 py-3 font-mono text-[10px] tracking-[0.18em] text-moss uppercase transition-colors hover:bg-moss/[0.06] disabled:opacity-50";
+  "group stamp-press inline-flex items-center justify-center gap-2.5 border-2 border-moss bg-card px-6 py-3 font-mono text-[10px] tracking-[0.18em] text-moss uppercase hover:bg-moss/[0.06] disabled:opacity-50";
+
 
 export function ArrowGlyph({ className }: { className?: string }) {
   return (

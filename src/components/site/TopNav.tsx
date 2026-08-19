@@ -56,32 +56,47 @@ export function TopNav() {
 
         <button
           onClick={() => setOpen((v) => !v)}
-          className="shrink-0 text-ebony md:hidden"
+          className="stamp-press flex h-9 w-9 shrink-0 items-center justify-center border border-gridline-strong bg-card text-ebony md:hidden"
           aria-label="Toggle navigation"
+          aria-expanded={open}
         >
-          {open ? <X size={18} /> : <Menu size={18} />}
+          {open ? <X size={16} /> : <Menu size={16} />}
         </button>
       </div>
 
       {open && (
-        <nav className="border-t border-gridline bg-canvas px-5 py-5 md:hidden">
-          <div className="mb-4">
+        <nav
+          className="border-t border-gridline-strong bg-card px-4 py-5 shadow-[0_25px_50px_-12px_rgba(27,31,28,0.18)] md:hidden"
+          aria-label="Mobiele navigatie"
+        >
+          <div className="mb-5 border border-gridline-strong bg-canvas p-3">
             <StatusPill />
           </div>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col divide-y divide-gridline border-y border-gridline-strong">
             {links.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
                 onClick={() => setOpen(false)}
-                className="font-mono text-[10px] tracking-[0.18em] text-ebony uppercase"
+                className="group flex items-center justify-between px-3 py-4 font-mono text-[11px] tracking-[0.18em] text-ebony uppercase transition-colors active:bg-moss/[0.06]"
+                activeProps={{ className: "text-moss" }}
               >
                 {l.label}
+                <span
+                  aria-hidden="true"
+                  className="text-terracotta transition-transform group-active:-translate-y-0.5 group-active:translate-x-0.5"
+                >
+                  ↗
+                </span>
               </Link>
             ))}
           </div>
+          <p className="mt-5 font-mono text-[9px] tracking-[0.16em] text-muted-ink uppercase">
+            // Infrastructure: Infomaniak SA (Geneva) // 100% hydroelectric //
+          </p>
         </nav>
       )}
     </header>
   );
 }
+
