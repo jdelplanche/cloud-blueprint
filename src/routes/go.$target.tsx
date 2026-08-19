@@ -172,6 +172,46 @@ const TARGETS: Record<string, Target> = {
       ["Inbegrepen", "DNS/MX-switch, gebruikerstraining, back-upplan"],
     ],
   },
+  storage: {
+    key: "storage",
+    title: "kDrive & Swiss Cloud Storage — Infomaniak",
+    index: "GO / 04",
+    lead: "Versleutelde Zwitserse opslag en back-up. Publieke Infomaniak-lijstprijzen, indicatief en excl. btw.",
+    signup: {
+      href: "https://www.infomaniak.com/en/hosting/kdrive",
+      label: "Start met kDrive Storage",
+    },
+    plans: [
+      {
+        name: "kDrive Solo",
+        price: "vanaf CHF 4.60",
+        unit: "/ maand",
+        specs: ["2 TB versleutelde opslag", "1 gebruiker", "Desktop- & mobiele sync", "Versiebeheer 30 dagen"],
+        href: "https://www.infomaniak.com/en/hosting/kdrive",
+      },
+      {
+        name: "kDrive Team",
+        price: "vanaf CHF 9.–",
+        unit: "/ maand (3 gebruikers)",
+        specs: ["3 TB gedeelde opslag", "Gedeelde mappen & rechten", "Realtime samenwerking", "Zwitserse jurisdictie"],
+        href: "https://www.infomaniak.com/en/hosting/kdrive",
+        featured: true,
+      },
+      {
+        name: "Swiss Backup",
+        price: "vanaf CHF 1.–",
+        unit: "/ 100 GB / maand",
+        specs: ["Server-, NAS- & device-back-up", "Acronis-compatibel", "Onbeperkt aantal toestellen", "Data in Genève"],
+        href: "https://www.infomaniak.com/en/hosting/swiss-backup",
+      },
+    ],
+    team: [
+      ["Aanmeldingsteam", "Delplanche Data Stewardship"],
+      ["Rol", "Migratie, retentiebeleid & back-upvalidatie"],
+      ["Doorlooptijd", "1 – 2 werkdagen"],
+      ["Inbegrepen", "Sync-configuratie, rechtenmatrix, herstel-test"],
+    ],
+  },
 };
 
 export const Route = createFileRoute("/go/$target")({
