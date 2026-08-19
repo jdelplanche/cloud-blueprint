@@ -189,7 +189,17 @@ function OnboardingPage() {
                     </>
                   )}
                 </ActionButton>
-                <span className="label-mono">Zero-tracking formulier</span>
+                <span className="label-mono">
+                  Zero-tracking formulier — verzonden naar cloud@delplanche.cloud
+                </span>
+                {state === "error" && (
+                  <span
+                    aria-live="polite"
+                    className="font-mono text-[10px] tracking-[0.16em] text-terracotta uppercase"
+                  >
+                    Verzenden mislukt — probeer opnieuw of mail direct
+                  </span>
+                )}
               </div>
             </form>
           )}
