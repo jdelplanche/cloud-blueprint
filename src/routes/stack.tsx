@@ -9,6 +9,7 @@ import {
 } from "@/components/site/Primitives";
 import { RedlineNote } from "@/components/site/RedlineNote";
 import { DossierDownload } from "@/components/site/DossierDownload";
+import { StatusChannel } from "@/components/site/SystemStatus";
 
 export const Route = createFileRoute("/stack")({
   head: () => ({
@@ -203,11 +204,19 @@ function StackPage() {
       </section>
 
       <section>
-        <SectionHeader index="D / Export" title="Dossier Export" />
+        <SectionHeader index="D / Uptime" title="Live Status Channel" />
+        <Panel className="mt-10">
+          <StatusChannel />
+        </Panel>
+      </section>
+
+      <section>
+        <SectionHeader index="E / Export" title="Dossier Export" />
         <Panel className="mt-10">
           <DossierDownload label="Download stack-dossier (PDF)" />
         </Panel>
       </section>
+
     </PageShell>
   );
 }
